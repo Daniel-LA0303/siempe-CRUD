@@ -63,7 +63,7 @@ function App() {
   return (
 <div className='content'>
       <h1 className='text-center text-white mt-3'>Code-LA</h1>
-      <div className="container d-flex justify-content-around flex-wrap content-all">
+      <div className="container d-flex justify-content-around flex-wrap content-all my-3">
         <motion.div 
           className="col-12 col-md-5 form"
           initial='hidden'

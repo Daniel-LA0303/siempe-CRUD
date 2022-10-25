@@ -50,10 +50,18 @@ code {
 .form{
   color: #fff;
   background-color: rgba(0, 0, 0, 0.2);
-  height: 35vh;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   margin-top: 30px;
   font-size: 25px;
+  
+}
+.box2{
+  width: 100%;
+  /* height: auto; */
 }
 .item{
   height: auto;
@@ -75,12 +83,11 @@ hr{
 }
 @media (max-width: 769px) {
   .form{
-    height: auto;
     margin-top: 30px;
     font-size: 20px;
   }
   .box{
-    height: 50vh;
+    height: 400px;
     overflow: auto;
     margin: 10px 0;
     font-size: 20px;

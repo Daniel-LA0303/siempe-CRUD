@@ -70,7 +70,7 @@ const Form = ({
         
     }
   return (
-    <div className='p-2'>
+    <div className='p-2 my-3 box2'>
         <form
             onSubmit={sendData}
             className="d-flex flex-column"
