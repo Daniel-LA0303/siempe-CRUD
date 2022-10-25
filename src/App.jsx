@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Alert from './components/Alert';
 import Form from './components/Form';
+import List from './components/List';
 
 
 function App() {
@@ -47,14 +48,17 @@ function App() {
           initial='hidden'
           animate='show'
         >
-          
-            {deleteAllC && 
-              
-                <Alert 
-                  confirmDelete={confirmDelete}
-                />
-            }
-          
+          {deleteAllC &&     
+            <Alert 
+              confirmDelete={confirmDelete}
+            />
+          }
+          <List 
+            customers={customers}
+            deleteCustomer={deleteCustomer}
+            setCustomerE={setCustomerE}
+            deleteAll={deleteAll}
+          />
         </div>
       </div>
     </div>

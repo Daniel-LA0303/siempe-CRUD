@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Alert = () => {
+const Alert = ({confirmDelete}) => {
   return (
     <div 
       className="alert alert-bg" 
