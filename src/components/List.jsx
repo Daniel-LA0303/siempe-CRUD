@@ -35,7 +35,7 @@ const List = ({
                 
             {customers.length>0 ? (
                 <AnimatePresence>
-                    {customers.reverse().map((customer) => (
+                    {[...customers].reverse().map((customer) => (
                         <Item 
                             key={customer.id}
                             customer={customer}
