@@ -1,6 +1,13 @@
 import React from 'react'
 import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
+
+const animations = {
+    initial: {scale: 0},
+    animate: {scale: 1},
+    exit: {scale: 0}
+}
 
 const Item = ({
     customer, 
@@ -9,8 +16,10 @@ const Item = ({
 }) => {
     const {name, lastName, id} = customer;
   return (
-    <div 
+    <motion.div 
         className='item p-2'
+        {...animations}  
+        layoutId={id}  
     >
         <p className=''>Name: {name}</p>
         <hr />
@@ -26,7 +35,7 @@ const Item = ({
                     className='delete btn btn-primary' 
                 ><FontAwesomeIcon icon={faPen}/></button>
             </div>
-        </div>
+        </motion.div>
   )
 }
 

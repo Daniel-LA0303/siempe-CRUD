@@ -3,6 +3,39 @@ import Alert from './components/Alert';
 import Form from './components/Form';
 import List from './components/List';
 
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
+
+const animationsForm = {
+  hidden: {
+    opacity: 0,
+    x: "-50px"
+  },
+  show: {
+    opacity: 1,
+    x: "0px",
+    transition: {
+      delay: 0.5,
+      duration: 1,
+      ease: "easeInOut",
+  }
+  }
+}
+const animationsList = {
+  hidden: {
+    opacity: 0,
+    x: "50px"
+  },
+  show: {
+    opacity: 1,
+    x: "0px",
+    transition: {
+      delay: 1,
+      duration: 1,
+      ease: "easeInOut",
+  }
+  }
+}
 
 function App() {
   
@@ -31,10 +64,11 @@ function App() {
 <div className='content'>
       <h1 className='text-center text-white mt-3'>Code-LA</h1>
       <div className="container d-flex justify-content-around flex-wrap content-all">
-        <div 
+        <motion.div 
           className="col-12 col-md-5 form"
           initial='hidden'
           animate='show'
+          variants={animationsForm}
         >
           <Form 
             customers={customers}
@@ -42,24 +76,27 @@ function App() {
             customerE={customerE}
             setCustomerE={setCustomerE}
           />
-        </div>
-        <div 
-          className="col-12 col-md-6 box p-3"
-          initial='hidden'
-          animate='show'
-        >
-          {deleteAllC &&     
-            <Alert 
-              confirmDelete={confirmDelete}
+        </motion.div>
+        <AnimatePresence>
+          <motion.div 
+            className="col-12 col-md-6 box p-3"
+            initial='hidden'
+            animate='show'
+            variants={animationsList}
+          >
+            {deleteAllC &&     
+              <Alert 
+                confirmDelete={confirmDelete}
+              />
+            }
+            <List 
+              customers={customers}
+              deleteCustomer={deleteCustomer}
+              setCustomerE={setCustomerE}
+              deleteAll={deleteAll}
             />
-          }
-          <List 
-            customers={customers}
-            deleteCustomer={deleteCustomer}
-            setCustomerE={setCustomerE}
-            deleteAll={deleteAll}
-          />
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   )
