@@ -75,7 +75,7 @@ const Form = ({
             onSubmit={sendData}
             className="d-flex flex-column"
         >
-        <h2 className='text-center '>CRUD</h2>
+        <h2 className='text-center '>TODOS</h2>
         <div className='campo'>
             <label htmlFor="name">Name</label>
             <input 
